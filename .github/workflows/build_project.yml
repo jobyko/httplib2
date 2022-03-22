@@ -43,6 +43,7 @@ jobs:
       - name: ziping httplib2  # run the run.py to get the latest data
         run: |
             cd build/lib.linux-x86_64-2.7
+            git fetch
             git checkout dist
             zip -rj httplib2.zip httplib2 
             ls 
