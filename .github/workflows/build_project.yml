@@ -49,6 +49,8 @@ jobs:
             
             mv httplib2.zip  ../../
             cd ../..
+            git config --global user.email "joby.ouseph@wipro.com"
+            git config --global user.name "jobyko"
             git add httplib2.zip && git commit -m "[update] release new version of httplib2.zip"
             git push origin dist
           
