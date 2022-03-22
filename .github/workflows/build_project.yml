@@ -44,8 +44,11 @@ jobs:
         run: |
             cd build/lib.linux-x86_64-2.7
             zip -rj httplib2.zip httplib2 
+            ls 
+            pwd 
             
             mv httplib2.zip  ../../
+            cd ../..
             git add httplib2.zip && git commit -m "[update] release new version of httplib2.zip"
             git push origin dist
           
