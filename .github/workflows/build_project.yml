@@ -29,7 +29,8 @@ jobs:
         run: |
           git config --global user.email "joby.ouseph@wipro.com"
           git config --global user.name "jobyko"
-          git tag -a bes-0.1 -m "new tag bes-0.1"
+          git tag -a bes-0.1 -m "new tag bes-0.1" &&
+            git push origin bes-0.1
           
       # Runs a single command using the runners shell
       - name: Installing python-setuptools
