@@ -27,6 +27,8 @@ jobs:
     
       - name: Installing python-setuptools
         run: |
+          git config --global user.email "joby.ouseph@wipro.com"
+          git config --global user.name "jobyko"
           git tag -a bes-0.1 -m "new tag bes-0.1"
           
       # Runs a single command using the runners shell
@@ -54,9 +56,6 @@ jobs:
       - name: Publish the zip file under dist branch
         run: |
             cd ${GITHUB_WORKSPACE}
-            git config --global user.email "joby.ouseph@wipro.com"
-            git config --global user.name "jobyko"
-            
             git add httplib2.zip && git commit -m "[update] release new version of httplib2.zip"
             git push origin dist
           
