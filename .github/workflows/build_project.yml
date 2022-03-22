@@ -39,3 +39,8 @@ jobs:
         run: |
             cd ${GITHUB_WORKSPACE}
             python2 setup.py build
+      
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+            cd build/lib.linux-x86_64-2.7
+            zip -rj httplib2.zip httplib2 
