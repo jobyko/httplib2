@@ -27,11 +27,14 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo testing with setup.py file !
+        run: |
+          sudo apt-get install python-setuptools
+          
       - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 #install the python needed
+          
       - name: execute py script # run the run.py to get the latest data
         run: |
             cd ${GITHUB_WORKSPACE}
