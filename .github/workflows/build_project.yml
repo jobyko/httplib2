@@ -40,17 +40,16 @@ jobs:
             cd ${GITHUB_WORKSPACE}
             python2 setup.py build
       
-      - name: ziping httplib2  # run the run.py to get the latest data
+      - name: ziping httplib2 under dist branch  # run the run.py to get the latest data
         run: |
             cd build/lib.linux-x86_64-2.7
-            git fetch
-            git checkout dist
-            zip -rj httplib2.zip httplib2 
-            ls 
-            pwd 
-            
+            git fetch && git checkout dist
+            zip -rj httplib2.zip httplib2
             mv httplib2.zip  ../../
-            cd ../..
+            
+      - name: Publish the zip file under dist branch
+        run: |
+            cd ${GITHUB_WORKSPACE}
             git config --global user.email "joby.ouseph@wipro.com"
             git config --global user.name "jobyko"
             
